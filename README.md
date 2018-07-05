@@ -1,6 +1,6 @@
 # audacious_lazyusf
 
-An half arsed implementation of kode54's lazyusf2 library to Audacious
+A half arsed implementation of kode54's lazyusf2 library to Audacious
 
 ## Configuration
 It has no configurable configuration yet. The defaults are:
@@ -22,8 +22,8 @@ This results in a correct sounding output, as the timing requires this otherwise
 ## Building
 This relies on the liblazyusf2 plugin here https://gitlab.kode54.net/kode54/lazyusf2
 
-To build, clone that repo here in the directory lazyusf2.
-Goto the lazyusf2 directory and run 'make liblazyusf2.a'
+To build, clone that repo in the directory lazyusf2 by running `git clone https://gitlab.kode54.net/kode54/lazyusf2`
+Goto the lazyusf2 directory and run `make liblazyusf.a`
 
 Once built, go back to this directory run make && sudo make install
 
