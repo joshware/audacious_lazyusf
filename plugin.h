@@ -47,6 +47,10 @@ public:
     bool play (const char * filename, VFSFile & file);
     void update(const void *data, int bytes);
 
+#if _AUD_PLUGIN_VERSION >= 48
+    bool read_tag (const char * filename, VFSFile & file, Tuple & tuple, Index<char> * image);
+#endif
+
 private:
 	usf_state_t * state;
 	bool usf_load(const char * file_name, VFSFile & file);

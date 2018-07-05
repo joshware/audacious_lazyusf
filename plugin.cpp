@@ -10,8 +10,8 @@
 #include <libaudcore/preferences.h>
 #include <audacious/audtag.h>
 
-
 #include "plugin.h"
+
 const int32_t sample_rate = 44100;
 const int32_t USF_CHANNELS = 2;
 const int32_t USF_BITS_PER_SAMPLE = 16;
@@ -478,4 +478,11 @@ bool LazyUSF2Plugin::write_tuple (const char * filename, VFSFile & file, const T
 const char *const LazyUSF2Plugin::exts[] = { "usf", "miniusf", nullptr };
 
 
-
+#if _AUD_PLUGIN_VERSION >= 48
+bool LazyUSF2Plugin::read_tag (const char * filename, VFSFile & file, Tuple & tuple, Index<char> * image)
+{
+    /* Lazy method to reduce duplication and maintain compatibility */
+    tuple = this->read_tuple(filename, file);
+    return true;
+}
+#endif
